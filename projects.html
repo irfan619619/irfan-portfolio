@@ -32,7 +32,17 @@
     <li>Content creation for the brand’s channels</li>
    </ul>
   </div>
-  <figure class="shot-img"><img src="images/autospa-home.jpg" width="1712" height="868" alt="AutoSpa website homepage: Best Car Wash in Kochi – Professional Car Cleaning &amp; Detailing" loading="lazy"><figcaption>AutoSpa homepage – built on WordPress</figcaption></figure>
+  <div class="gallery" role="group" aria-roledescription="carousel" aria-label="AutoSpa project screenshots">
+   <div class="track" tabindex="0">
+    <figure class="slide"><img src="images/autospa-home.jpg" width="1712" height="868" alt="AutoSpa website homepage: Best Car Wash in Kochi – Professional Car Cleaning &amp; Detailing"><figcaption>Website – AutoSpa homepage built on WordPress</figcaption></figure>
+    <!-- ADD MORE SLIDES: copy one <figure class="slide">…</figure> line, change the src, alt and caption -->
+    <figure class="slide"><div class="ph"><b>Social media</b>Posts &amp; content – coming soon</div><figcaption>Social media posts</figcaption></figure>
+    <figure class="slide"><div class="ph"><b>GA4</b>Analytics screenshots – coming soon</div><figcaption>Google Analytics (GA4)</figcaption></figure>
+   </div>
+   <button class="gbtn gprev" type="button" aria-label="Previous image">‹</button>
+   <button class="gbtn gnext" type="button" aria-label="Next image">›</button>
+   <div class="dots" aria-hidden="true"></div>
+  </div>
  </article>
  <div class="note">More projects will be added here soon.</div>
 </div></section>
@@ -48,5 +58,20 @@
  </div>
  <div class="copy">© 2026 Muhammed Irfan T. Built with intent, ranked with SEO.</div>
 </div></footer>
+<script>
+document.querySelectorAll(".gallery").forEach(function(g){
+ var t=g.querySelector(".track"),sl=t.querySelectorAll(".slide"),d=g.querySelector(".dots"),dots=[];
+ if(sl.length<2){g.classList.add("single");return}
+ sl.forEach(function(_,i){var b=document.createElement("button");b.type="button";b.tabIndex=-1;b.addEventListener("click",function(){go(i)});d.appendChild(b);dots.push(b)});
+ function cur(){return Math.round(t.scrollLeft/t.clientWidth)}
+ function go(i){i=Math.max(0,Math.min(sl.length-1,i));t.scrollTo({left:i*t.clientWidth,behavior:"smooth"})}
+ function upd(){var c=cur();dots.forEach(function(b,i){b.classList.toggle("on",i===c)});g.querySelector(".gprev").disabled=c===0;g.querySelector(".gnext").disabled=c===sl.length-1}
+ g.querySelector(".gprev").addEventListener("click",function(){go(cur()-1)});
+ g.querySelector(".gnext").addEventListener("click",function(){go(cur()+1)});
+ t.addEventListener("scroll",function(){requestAnimationFrame(upd)},{passive:true});
+ t.addEventListener("keydown",function(e){if(e.key==="ArrowRight"){e.preventDefault();go(cur()+1)}if(e.key==="ArrowLeft"){e.preventDefault();go(cur()-1)}});
+ upd();
+});
+</script>
 </body>
 </html>

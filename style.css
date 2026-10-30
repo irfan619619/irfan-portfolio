@@ -111,3 +111,21 @@ nav a.cur.hire{background:var(--accent)}
 .shot-img img{width:100%;height:auto;border-radius:16px;border:1px solid var(--line);display:block;transition:transform .3s ease,box-shadow .3s ease}
 .shot-img figcaption{font-size:13px;color:var(--muted);text-align:center}
 @media(hover:hover){.proj:hover .shot-img img{transform:scale(1.02);box-shadow:0 14px 40px rgba(0,0,0,.45)}}
+
+.gallery{position:relative;min-width:0;align-self:center}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:16px;outline-offset:4px}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:start;margin:0;display:flex;flex-direction:column;gap:10px;min-width:0}
+.slide img,.slide .ph{width:100%;aspect-ratio:1712/868;object-fit:cover;border-radius:16px;border:1px solid var(--line);display:block}
+.slide .ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;border-style:dashed;color:#7c7bb0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;background-image:radial-gradient(rgba(139,141,252,.12) 1px,transparent 1px);background-size:20px 20px}
+.slide .ph b{font-size:30px;letter-spacing:0;color:var(--accent2)}
+.slide figcaption{font-size:13px;color:var(--muted);text-align:center}
+.gbtn{position:absolute;top:calc(50% - 30px);width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:rgba(15,14,26,.8);color:var(--text);font-size:24px;line-height:1;cursor:pointer;display:grid;place-items:center;padding:0 0 3px;backdrop-filter:blur(6px);transition:background .2s,opacity .2s}
+.gbtn:hover:not(:disabled){background:var(--accent)}
+.gbtn:disabled{opacity:.3;cursor:default}
+.gprev{left:10px}.gnext{right:10px}
+.dots{display:flex;justify-content:center;gap:8px;margin-top:14px}
+.dots button{width:8px;height:8px;padding:0;border-radius:99px;border:0;background:var(--line);cursor:pointer;transition:width .25s,background .25s}
+.dots button.on{width:24px;background:var(--accent)}
+.gallery.single .gbtn,.gallery.single .dots{display:none}
+@media(prefers-reduced-motion:reduce){.track{scroll-behavior:auto}}
