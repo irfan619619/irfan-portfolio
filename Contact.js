@@ -1,7 +1,7 @@
 /* Contact form – sends messages to your email using Web3Forms (free).
    1) Go to https://web3forms.com, enter irfanippu95620@gmail.com and get your Access Key.
    2) Paste the key between the quotes below. */
-var ACCESS_KEY = "PASTE_YOUR_ACCESS_KEY_HERE";
+var ACCESS_KEY = "a32f31f3-acca-4aeb-af83-c9a13201f7fb";
 
 (function () {
   var f = document.getElementById("cform");
