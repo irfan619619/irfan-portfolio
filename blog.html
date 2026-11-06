@@ -67,7 +67,56 @@
 </div></footer>
 <a class="wafab" href="https://wa.me/916238917612?text=Hi%20Irfan%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20talk." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.1 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.3 5.3 0 001.1 2.8 12 12 0 004.6 4c1.7.7 2.4.8 3.2.7a2.7 2.7 0 001.8-1.3 2.2 2.2 0 00.2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></a>
 
-<script src="contact.js"></script>
+<script>
+/* Contact form key: paste your Web3Forms access key between the quotes (same key in all 3 pages) */
+var ACCESS_KEY = "PASTE_YOUR_ACCESS_KEY_HERE";
+
+(function () {
+  var f = document.getElementById("cform");
+  if (!f) return;
+  var st = f.querySelector(".fstatus"), btn = f.querySelector("button");
+
+  function fallback(d) {
+    var m = "mailto:irfanippu95620@gmail.com?subject=" + encodeURIComponent(d.subject) +
+      "&body=" + encodeURIComponent(d.message + "\n\n– " + d.name + " (" + d.email + ")");
+    st.className = "fstatus err";
+    st.innerHTML = "Couldn’t send right now. Please <a href=\"" + m + "\">email me directly</a> or use WhatsApp.";
+  }
+
+  f.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (f.elements._honey.value) return;
+    var d = {
+      name: f.elements.name.value,
+      email: f.elements.email.value,
+      subject: f.elements.subject.value,
+      message: f.elements.message.value
+    };
+    if (!ACCESS_KEY || ACCESS_KEY.indexOf("PASTE") === 0) { fallback(d); return; }
+    btn.disabled = true; btn.textContent = "Sending…"; st.className = "fstatus"; st.textContent = "";
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        access_key: ACCESS_KEY,
+        from_name: "Portfolio website",
+        subject: "Portfolio enquiry: " + d.subject,
+        name: d.name, email: d.email, message: d.message
+      })
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (j) {
+        if (j.success === true || j.success === "true") {
+          st.className = "fstatus ok";
+          st.textContent = "Thank you! Your message has been sent. I’ll reply soon.";
+          f.reset();
+        } else { throw new Error(j.message || "fail"); }
+      })
+      .catch(function () { fallback(d); })
+      .finally(function () { btn.disabled = false; btn.textContent = "Send message ↗"; });
+  });
+})();
+</script>
 <script>
 (function(){var b=document.querySelector(".burger"),n=document.getElementById("mnav");if(!b||!n)return;
 function set(o){n.classList.toggle("open",o);b.setAttribute("aria-expanded",o?"true":"false");b.setAttribute("aria-label",o?"Close menu":"Open menu")}
