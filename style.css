@@ -176,3 +176,31 @@ header nav.open{display:flex}
 header nav a{padding:14px 16px;font-size:16px;border-radius:14px}
 header nav a.hire{text-align:center;margin-top:8px}
 }
+
+.pf{position:relative;display:block;overflow:hidden;padding:0;isolation:isolate}
+.pf-img{position:absolute;left:50%;bottom:0;width:86%;max-width:none;height:auto;transform:translateX(-50%);z-index:3;animation:pfFloat 6s ease-in-out infinite;-webkit-mask-image:linear-gradient(to bottom,#000 78%,transparent 100%);mask-image:linear-gradient(to bottom,#000 78%,transparent 100%);filter:drop-shadow(0 10px 24px rgba(0,0,0,.4))}
+.pf-glow{position:absolute;border-radius:50%;filter:blur(46px);z-index:0;opacity:.75}
+.pf-glow.g1{width:240px;height:240px;background:#6366f1;top:8%;left:-10%;animation:pfDrift 9s ease-in-out infinite alternate}
+.pf-glow.g2{width:200px;height:200px;background:#a855f7;bottom:12%;right:-12%;animation:pfDrift 11s ease-in-out infinite alternate-reverse}
+.pf-ring{position:absolute;left:50%;top:44%;border-radius:50%;z-index:1;transform:translate(-50%,-50%)}
+.pf-ring.r1{width:82%;aspect-ratio:1;border:1.5px dashed rgba(139,141,252,.55);animation:pfSpin 26s linear infinite}
+.pf-ring.r2{width:62%;aspect-ratio:1;border:1.5px dotted rgba(168,85,247,.6);animation:pfSpin 18s linear infinite reverse}
+.pf-ring::after{content:"";position:absolute;top:-5px;left:50%;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:var(--accent2);box-shadow:0 0 14px 3px rgba(139,141,252,.8)}
+.chip{position:absolute;z-index:4;display:inline-flex;align-items:center;gap:8px;padding:7px 13px;border-radius:99px;font-size:12.5px;font-weight:600;color:var(--text);background:rgba(28,27,63,.72);border:1px solid rgba(139,141,252,.35);backdrop-filter:blur(8px);box-shadow:0 8px 22px rgba(0,0,0,.35);animation:pfBob 5s ease-in-out infinite}
+.chip i{width:8px;height:8px;border-radius:50%;background:#5be3a0;box-shadow:0 0 10px #5be3a0}
+.chip.c1{top:9%;left:6%}
+.chip.c2{top:19%;right:5%;animation-delay:-1.2s}.chip.c2 i{background:var(--accent2);box-shadow:0 0 10px var(--accent2)}
+.chip.c3{top:46%;left:3%;animation-delay:-2.4s}.chip.c3 i{background:#f9a8d4;box-shadow:0 0 10px #f9a8d4}
+.chip.c4{top:72%;right:2%;animation-delay:-3.4s}
+.bars{display:inline-flex;align-items:flex-end;gap:2px;height:14px}
+.bars u{display:block;width:4px;min-height:5px;border-radius:2px;background:var(--accent2);animation:pfBar 1.6s ease-in-out infinite;transform-origin:bottom;height:100%}
+.bars u:nth-child(2){animation-delay:-.5s}.bars u:nth-child(3){animation-delay:-1s}
+.pf-name{position:absolute;left:14px;right:14px;bottom:14px;z-index:5;text-align:center;padding:12px 10px;border-radius:18px;background:rgba(15,14,26,.6);border:1px solid rgba(139,141,252,.3);backdrop-filter:blur(10px)}
+.pf-name b{display:block;font-size:17px}
+.pf-name small{display:block;margin-top:2px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+@keyframes pfFloat{50%{transform:translateX(-50%) translateY(-7px)}}
+@keyframes pfBob{50%{transform:translateY(-10px)}}
+@keyframes pfSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes pfDrift{to{transform:translate(30px,24px) scale(1.15)}}
+@keyframes pfBar{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
+@media(max-width:600px){.chip{font-size:11.5px;padding:6px 11px}}
