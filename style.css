@@ -247,7 +247,7 @@ header nav a.hire{text-align:center;margin-top:8px}
 .marquee:hover .mtrack{animation-play-state:paused}
 .tool{display:flex;align-items:center;gap:14px;padding:12px 22px 12px 12px;border:1px solid var(--line);background:var(--card);border-radius:99px;font-weight:600;font-size:15px;white-space:nowrap;transition:transform .25s,border-color .25s,background .25s}
 .tool:hover{transform:translateY(-4px);border-color:var(--accent);background:var(--card2)}
-.tl{width:46px;height:46px;border-radius:50%;background:#f4f4fb;display:grid;place-items:center;flex:none}
-.tl svg{width:24px;height:24px}
+.tlogo{width:46px;height:46px;border-radius:50%;background:#f4f4fb;display:grid;place-items:center;flex:none}
+.tlogo svg{width:24px;height:24px}
 @keyframes mScroll{to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none}.mtrack{animation:none}}
