@@ -204,3 +204,32 @@ header nav a.hire{text-align:center;margin-top:8px}
 @keyframes pfDrift{to{transform:translate(30px,24px) scale(1.15)}}
 @keyframes pfBar{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
 @media(max-width:600px){.chip{font-size:11.5px;padding:6px 11px}}
+
+.xtabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin-bottom:36px;padding-bottom:4px}
+.xtabs::-webkit-scrollbar{display:none}
+.xtab{flex:none;font:inherit;font-size:14px;font-weight:600;color:var(--muted);background:var(--card);border:1px solid var(--line);border-radius:99px;padding:10px 20px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.xtab:hover{color:var(--text);border-color:var(--accent2)}
+.xtab.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.xpanel{margin-bottom:56px}.xpanel[hidden]{display:none}
+.xpanel h2{margin:0 0 6px}
+.xgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.xgrid.xg4{grid-template-columns:repeat(2,1fr)}
+.xcard{display:flex;flex-direction:column;gap:2px}
+.xcard .tags{margin:16px 0 12px}
+.xcard h3{margin:0 0 6px;font-size:20px}
+.xcard .btn.sm{margin-top:auto;align-self:flex-start}
+.xcard p{margin-bottom:18px}
+.xshot{aspect-ratio:2/1;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--card2)}
+.xshot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.xph{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;color:#7c7bb0;font-size:11px;letter-spacing:.12em;text-transform:uppercase;border:1px dashed var(--line);border-radius:14px;background-image:radial-gradient(rgba(139,141,252,.12) 1px,transparent 1px);background-size:18px 18px}
+.xshot .xph{border:0;border-radius:0}
+.xph b{font-size:24px;letter-spacing:0;color:var(--accent2)}
+.btn.sm{padding:9px 18px;font-size:13px}
+.btn.off{opacity:.55;cursor:default;pointer-events:none}
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 18px}
+.strip .xph{aspect-ratio:1;height:auto}
+.metrics{margin:0 0 4px;display:grid;gap:8px}
+.metrics div{display:flex;justify-content:space-between;gap:12px;font-size:14px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.metrics dt{color:var(--muted)}.metrics dd{margin:0;font-weight:600}
+@media(max-width:900px){.xgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.xgrid,.xgrid.xg4{grid-template-columns:1fr}}
