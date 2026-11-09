@@ -235,3 +235,9 @@ header nav a.hire{text-align:center;margin-top:8px}
 @media(max-width:600px){.xgrid,.xgrid.xg4{grid-template-columns:1fr}}
 
 .xgal{margin:0 0 18px;align-self:stretch}
+
+/* Hero photo: full-bleed portrait */
+.pf-img{left:0;top:0;bottom:auto;width:100%;height:100%;object-fit:cover;object-position:50% 25%;transform:none;-webkit-mask-image:none;mask-image:none;filter:none;z-index:0;animation:pfZoom 14s ease-in-out infinite alternate}
+.pf::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(to top,rgba(10,12,40,.88) 0%,rgba(10,12,40,0) 40%)}
+.pf-ring{z-index:2}.pf-ring.r1{border-color:rgba(255,255,255,.35)}.pf-ring.r2{border-color:rgba(255,255,255,.3)}
+@keyframes pfZoom{to{transform:scale(1.07)}}
