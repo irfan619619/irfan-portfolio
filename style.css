@@ -233,3 +233,5 @@ header nav a.hire{text-align:center;margin-top:8px}
 .metrics dt{color:var(--muted)}.metrics dd{margin:0;font-weight:600}
 @media(max-width:900px){.xgrid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.xgrid,.xgrid.xg4{grid-template-columns:1fr}}
+
+.xgal{margin:0 0 18px;align-self:stretch}
