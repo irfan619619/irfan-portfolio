@@ -259,3 +259,18 @@ header nav a.hire{text-align:center;margin-top:8px}
 .soc a{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--card);display:grid;place-items:center;color:var(--muted);transition:transform .2s,color .2s,background .2s,border-color .2s}
 .soc a:hover{color:#fff;background:var(--accent);border-color:var(--accent);transform:translateY(-3px)}
 .soc svg{width:19px;height:19px}
+
+.art-wrap{max-width:760px}
+.art-back{display:inline-block;margin-bottom:24px;color:var(--muted);font-size:14px}.art-back:hover{color:var(--text)}
+.article h1{font-size:clamp(30px,4.6vw,44px);line-height:1.15;letter-spacing:-.02em;margin:14px 0 12px}
+.art-meta{color:var(--muted);font-size:14px;margin:0 0 28px}
+.art-lead{font-size:19px!important;color:var(--text)!important}
+.article h2{font-size:24px;margin:40px 0 10px;letter-spacing:-.01em}
+.article p,.article li{color:var(--muted);font-size:17px;line-height:1.75}
+.article p{margin:0 0 16px}
+.article ul{padding-left:22px;margin:0 0 16px;display:grid;gap:8px}
+.article strong{color:var(--text)}
+.article a{color:var(--accent2);text-decoration:underline}
+.callout{border:1px solid var(--accent);background:var(--card2);border-radius:20px;padding:22px 26px;margin:34px 0}
+.callout>strong{display:block;font-size:18px;margin-bottom:10px}
+.callout ul{margin:0}
