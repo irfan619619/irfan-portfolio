@@ -243,7 +243,7 @@ header nav a.hire{text-align:center;margin-top:8px}
 @keyframes pfZoom{to{transform:scale(1.07)}}
 
 .marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.mtrack{display:flex;gap:18px;width:max-content;margin:0;padding:6px 0 6px 18px;list-style:none;animation:mScroll 38s linear infinite}
+.mtrack{display:flex;gap:18px;width:max-content;margin:0;padding:6px 0 6px 18px;list-style:none;animation:mScroll 56s linear infinite}
 .marquee:hover .mtrack{animation-play-state:paused}
 .tool{display:flex;align-items:center;gap:14px;padding:12px 22px 12px 12px;border:1px solid var(--line);background:var(--card);border-radius:99px;font-weight:600;font-size:15px;white-space:nowrap;transition:transform .25s,border-color .25s,background .25s}
 .tool:hover{transform:translateY(-4px);border-color:var(--accent);background:var(--card2)}
@@ -251,3 +251,11 @@ header nav a.hire{text-align:center;margin-top:8px}
 .tlogo svg{width:24px;height:24px}
 @keyframes mScroll{to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none}.mtrack{animation:none}}
+
+.hero .wrap{grid-template-columns:1fr;max-width:1100px}
+.hero .lead{max-width:680px}
+.soc{display:flex;gap:12px;margin-top:18px}
+.soc:empty{display:none}
+.soc a{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--card);display:grid;place-items:center;color:var(--muted);transition:transform .2s,color .2s,background .2s,border-color .2s}
+.soc a:hover{color:#fff;background:var(--accent);border-color:var(--accent);transform:translateY(-3px)}
+.soc svg{width:19px;height:19px}
